@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red 
+        }
+        .box1 .box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="box1"  onclick="fun2()">
+            <div class="box2" onclick="fun1(event)"></div>
+    </div>
+            
+    <script type="text/javascript">
+        //阻止事件传递,黄色的不传递给红色的
+        function fun1(e) {
+           /* alert("yellow");
+            if(e && e.stopPropagation){
+                alert("w3c");
+                e.stopPropagation();
+            }else{
+                alert("IE");
+                window.event.cancelBubble = true;
+            }*/
+            alert('yellow');
+        }
+        function fun2() {
+            alert("red");
+        }
+    </script>
+    
+            
+</body>
+</html>

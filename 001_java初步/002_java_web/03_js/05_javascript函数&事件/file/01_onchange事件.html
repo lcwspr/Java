@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <select name="city" id="city" onchange="changeDistrict()">
+        <option value="gz">广州</option>
+        <option value="sz">深圳</option>
+        <option value="zh">珠海</option>
+    </select>
+    <select name="district" id="district">
+        <option value="">天河区</option>
+        <option value="">白云区</option>
+        <option value="">哈哈区</option>
+    </select>
+
+    <script>
+        // 实现二级联动
+        // 监听city的改变事件
+        function changeDistrict(){
+            // 获取区域标签
+            var districtTag = document.getElementById("district");
+            // 获取城市标签
+            var cityTag = document.getElementById('city');
+            // 获取选择的城市值
+            var cityCode = cityTag.value;
+
+            // 先判断城区
+            switch(cityCode){
+                case 'gz':
+                    // 更改子标签内容
+                    districtTag.innerHTML = '<option value="">天河区</option><option value="">白云区</option><option value="">哈哈区</option>'
+                    break;
+                case 'sz':
+                    districtTag.innerHTML = '<option value="">南山区</option><option value="">福田区</option><option value="">牛逼区</option>'
+                    break;
+                case 'zh':
+                    districtTag.innerHTML = '<option value="">拱北区</option><option value="">香洲区</option>';
+                break;
+
+            }
+        }
+    </script>
+</body>
+</html>

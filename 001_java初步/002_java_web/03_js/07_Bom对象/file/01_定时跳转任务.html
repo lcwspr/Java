@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>您的订单提交完成<span id="time">5</span>秒后跳转到查询页面</p>
+	<script>
+		var mutex = 5;
+		var oNowTime = document.getElementById("time");
+
+		var timer = setInterval(function(){
+			mutex --;
+			if(mutex <= 0){
+				clearInterval(timer);
+				window.location.href = "https://baidu.com";
+			}else{
+				oNowTime.innerHTML=mutex;
+			}
+
+		}, 1000)
+
+
+	</script>
+</body>
+</html>

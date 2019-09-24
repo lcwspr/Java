@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://baidu.com">百度</a>
+
+    <script>
+
+        // event:固定事件
+        // <a href="http://www.baidu.com" onclick="fun(event)">点击我</a>
+            //阻止事件的默认行为
+            //IE web技术：window.event.returnValue = false;
+            //W3c web技术: 传递过来的事件对象.preventDefault(); 
+
+        function fun(e) {
+            if(e && e.preventDefault){
+                alert("w3c");
+                e.preventDefault();
+            }else{
+                alert("IE");
+                window.event.returnValue = false;
+            }
+        }
+    
+    </script>
+</body>
+</html>

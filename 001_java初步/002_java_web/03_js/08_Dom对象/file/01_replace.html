@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li id="cl">陈莉</li>
+            <li>胡歌</li>
+            <li>周杰伦</li>
+        </ul>
+        <ul>
+            <li id="ldh">刘德华</li>
+            <li>古天乐</li>
+        </ul>
+    </div>
+    <div>
+        <input type="button" value="我换" onclick="myClick()">
+    </div>
+
+    <script>
+        function myClick(){
+            // replaceChild
+            // 1. 获取节点
+            var clTag = document.getElementById('cl');
+            var ldhTag = document.getElementById('ldh');
+
+            // 2. 替换
+            // 获取 父节点
+            var ul = clTag.parentNode;
+
+            // 替换
+            var nowLDH = ldhTag.cloneNode(true);            
+
+            ul.replaceChild(nowLDH,clTag);
+
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

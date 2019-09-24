@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <span id="tip" style="color:red"></span><br>
+    请输入用户名<input type="text" name="username" onfocus="begin()" onblur="end()">
+    <script>
+        // onfocus 获得焦点事件
+        // onblur  失去焦点
+        function begin(){
+            document.getElementById("tip").innerHTML ="输入中.....";
+        }
+
+        function end(){
+            document.getElementById("tip").innerHTML ="输入完成.....";
+        }
+    </script>
+</body>
+</html>
